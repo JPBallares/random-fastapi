@@ -8,11 +8,10 @@ from splitio.exceptions import TimeoutException
 
 class SplitSDK:
 
-    def __init__(self):
+    def __init__(self, api_key = os.getenv('SPLIT_KEY')):
         sdk_config = {
             'labelsEnabled': True
         }
-        api_key = os.getenv('SPLIT_KEY')
 
         self.factory = get_splitio_factory(
             api_key,
